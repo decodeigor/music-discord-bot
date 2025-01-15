@@ -10,7 +10,7 @@ intent.message_content = True
 
 bot = commands.Bot(command_prefix='!', intents=intent)
 
-queue = []  # Черга для пісень
+queue = [] 
 
 @bot.event
 async def on_ready():
@@ -20,7 +20,7 @@ async def on_ready():
 async def join(ctx):
     if ctx.author.voice:
         channel = ctx.author.voice.channel
-        if not ctx.voice_client:  # Приєднується, тільки якщо ще не підключений
+        if not ctx.voice_client:  
             await channel.connect()
             await ctx.send(f'Приєднався до каналу: {channel}')
         else:
